@@ -1,0 +1,17 @@
+server:
+  port: 1000
+spring:
+  application:
+    name: Eureka
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  instance:
+    prefer-ip-address: true
+#    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#    # eureka.instance.hostname=${spring.cloud.client.ipAddress}
+#    hostname: ${spring.cloud.client.ipAddress}
+
+# eureka.instance.preferIpAddress=true
+# eureka.instance.instance-id=${spring.cloud.client.ipAddress}:${server.port}

@@ -1,0 +1,14 @@
+server:
+  port: 1001
+  servlet:
+    context-path: /${spring.application.name}
+spring:
+  application:
+    name: admin
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:1000/eureka/
+# eureka.instance.instance-id=xxx.xxx.xxx.67:${server.port}
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
