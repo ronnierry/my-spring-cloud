@@ -3,6 +3,8 @@ package com.ronnie.cloud.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
+import java.io.Serializable;
+
 /**
  * @Description:
  * @Author: rongyu
@@ -11,8 +13,11 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class ResultMessage {
+public class ResultMessage implements Serializable {
     private String msg;
     private int code;
     private Object data;
+
+    public ResultMessage() {
+    }
 }

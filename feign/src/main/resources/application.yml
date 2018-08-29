@@ -1,0 +1,14 @@
+server:
+  port: 2000
+  servlet:
+    context-path: /${spring.application.name}
+spring:
+  application:
+    name: feign
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://127.0.0.1:1000/eureka/
+# eureka.instance.instance-id=xxx.xxx.xxx.67:${server.port}
+  instance:
+    instance-id: 127.0.0.1:${server.port}

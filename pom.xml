@@ -12,6 +12,7 @@
         <module>cloud</module>
         <module>admin</module>
         <module>core</module>
+        <module>feign</module>
     </modules>
 
     <parent>

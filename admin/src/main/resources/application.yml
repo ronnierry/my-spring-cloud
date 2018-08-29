@@ -4,11 +4,10 @@ server:
     context-path: /${spring.application.name}
 spring:
   application:
-    name: admin
+    name: ADMIN
 eureka:
   client:
     serviceUrl:
       defaultZone : http://localhost:1000/eureka/
-# eureka.instance.instance-id=xxx.xxx.xxx.67:${server.port}
   instance:
-    instance-id: ${spring.application.name}:${server.port}
+    instance-id: 127.0.0.1:${server.port}
