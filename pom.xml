@@ -13,6 +13,7 @@
         <module>admin</module>
         <module>core</module>
         <module>feign</module>
+        <module>zuul</module>
     </modules>
 
     <parent>

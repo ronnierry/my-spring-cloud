@@ -4,8 +4,7 @@ import com.ronnie.cloud.Remote.AdminRemote;
 import com.ronnie.cloud.model.ResultMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,11 +26,22 @@ public class TestController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("test")
-    public ResultMessage test() {
-       //ResponseEntity<ResultMessage> forEntity = restTemplate.getForEntity("http://"+admin.getHost()+":"+admin.getPort()+"ADMIN/all", ResultMessage.class);
+    @GetMapping("feign")
+    public ResultMessage feignTest() {
         ResultMessage resultMessage = adminRemote.fetchAll();
-        log.info("");
         return resultMessage;
     }
+
+    @GetMapping("rest")
+    public ResultMessage restTest() {
+        ResponseEntity<ResultMessage> forEntity = restTemplate.getForEntity("http://ADMIN/ADMIN/all", ResultMessage.class);
+        ResultMessage result;
+        if (forEntity.getStatusCode() == HttpStatus.OK) {
+            result = forEntity.getBody();
+        } else {
+            result = new ResultMessage("ERROR", 500, null);
+        }
+        return result;
+    }
+
 }

@@ -1,0 +1,21 @@
+server:
+  port: 3000
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    serviceUrl:
+      defaultZone : http://localhost:1000/eureka/
+  instance:
+    instance-id: 127.0.0.1:${server.port}
+zuul:
+  routes:
+    admin: ADMIN
+  host:
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
+    max-total-connections: 200
+    max-per-route-connections: 20
+    time-unit: MILLISECONDS
+    time-to-live: 10000

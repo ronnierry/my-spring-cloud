@@ -1,10 +1,8 @@
 server:
-  port: 1001
-  servlet:
-    context-path: /${spring.application.name}
+  port: 2000
 spring:
   application:
-    name: ADMIN
+    name: admin
 eureka:
   client:
     serviceUrl:

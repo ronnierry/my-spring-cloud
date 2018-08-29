@@ -6,10 +6,11 @@
         <artifactId>my-spring-cloud-parent</artifactId>
         <groupId>com.ronnie</groupId>
         <version>1.0</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>admin</artifactId>
+    <artifactId>zuul</artifactId>
 
     <dependencies>
         <dependency>
@@ -20,21 +21,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>com.ronnie</groupId>
-            <artifactId>core</artifactId>
-            <version>1.0</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
-
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+
 </project>
